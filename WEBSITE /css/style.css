@@ -1,0 +1,285 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  background: #000;
+  color: #eef6f1;
+  overflow-x: hidden;
+}
+
+
+.site-logo {
+  position: fixed;
+  top: 22px;
+  left: 26px;
+  z-index: 10;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(10px);
+
+  border-radius: 12px;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.28);
+}
+
+.site-logo img {
+  height: 84px;
+  width: auto;
+  display: block;
+
+
+  padding: 0;
+  margin: 0;
+  object-fit: contain;
+}
+
+
+@media (max-width: 768px) {
+  .site-logo {
+    top: 16px;
+    left: 16px;
+  }
+
+  .site-logo img {
+    height: 60px;
+  }
+}
+
+
+
+.cinematic-bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background-image: url("../assets/forest-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+
+.cinematic-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.25),
+    rgba(0,0,0,0.35)
+  );
+  pointer-events: none;
+}
+
+
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+
+.hero,
+.page-hero,
+.story,
+.content,
+.impact {
+  position: relative;
+  z-index: 3;
+}
+
+
+.eyebrow {
+  display: inline-block;
+  margin-bottom: 14px;
+  text-transform: uppercase;
+  letter-spacing: 2.4px;
+  font-size: 0.7rem;
+  color: #9be7c4;
+}
+
+.section-title {
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 22px;
+}
+
+.lead {
+  font-size: 1.25rem;
+  line-height: 1.75;
+  max-width: 780px;
+  color: #e3f3eb;
+}
+
+.highlight {
+  font-size: 1.4rem;
+  font-weight: 600;
+  max-width: 820px;
+  color: #dbffee;
+}
+
+.divider {
+  width: 60px;
+  height: 3px;
+  background: rgba(255,255,255,0.35);
+  margin: 24px 0 36px;
+  border-radius: 2px;
+}
+
+
+.hero {
+  min-height: 100vh;
+  padding: 10vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.hero-actions {
+  margin-top: 48px;
+  display: flex;
+  gap: 22px;
+}
+
+.hero-actions a {
+  padding: 16px 44px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.14);
+  backdrop-filter: blur(18px);
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: transform 0.35s ease, background 0.35s ease;
+}
+
+.hero-actions a:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.28);
+}
+
+
+.page-hero {
+  padding: 12vw 10vw 6vw;
+}
+
+
+.story {
+  padding: 12vw 10vw;
+}
+
+.story.alt {
+  background: rgba(255,255,255,0.04);
+}
+
+
+.content {
+  max-width: 1100px;
+  margin: auto;
+  padding: 6vw 8vw;
+}
+
+
+.content-section {
+  margin-bottom: 90px;
+}
+
+.highlight-section {
+  padding: 48px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+}
+
+
+.feature-grid {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 26px;
+}
+
+.feature-card {
+  padding: 26px 30px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.07);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+
+.team-grid {
+  margin-top: 36px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.team-card {
+  padding: 30px;
+  border-radius: 22px;
+  background: rgba(255,255,255,0.08);
+}
+
+.team-card h4 {
+  margin-bottom: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+
+.impact {
+  padding: 10vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+  gap: 34px;
+}
+
+.impact-card {
+  padding: 48px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(22px);
+  font-weight: 600;
+  text-align: center;
+}
+
+
+@media (max-width: 768px) {
+  .hero,
+  .story,
+  .impact {
+    padding: 16vw 8vw;
+  }
+
+  .page-hero {
+    padding: 18vw 8vw 10vw;
+  }
+
+  .content {
+    padding: 12vw 8vw;
+  }
+
+  .highlight-section {
+    padding: 36px;
+  }
+}
+
